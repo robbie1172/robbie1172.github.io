@@ -4,22 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Engineering portfolio of Robbie Thomson. Electrical and Mechanical Engineering student at the University of Edinburgh.">
-<title>Robbie Thomson — Engineering Projects</title>
+<title>Robbie Thomson — Engineering Portfolio</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
 
   :root{
-    --bg: #090E17;
-    --grid-line: rgba(255, 255, 255, 0.04);
-    --sheet: #111827;
-    --border: #1F2937;
-    --ink: #F3F4F6;
-    --muted: #9CA3AF;
-    --accent: #00E5FF; /* Cyan */
-    --accent-glow: rgba(0, 229, 255, 0.15);
-    --ok: #10B981; /* LED Green */
-    --wip: #F59E0B; /* LED Amber */
-    --radius: 8px;
+    /* Premium, clean dark theme */
+    --bg: #0D1117;
+    --grid-line: rgba(255, 255, 255, 0.025);
+    --sheet: #161B22;
+    --border: #30363D;
+    --ink: #E6EDF3;
+    --muted: #8B949E;
+    --accent: #58A6FF;
+    --accent-hover: #79C0FF;
+    --ok: #238636;
+    --wip: #D29922;
+    --radius: 6px;
   }
 
   *{ box-sizing:border-box; }
@@ -31,20 +32,20 @@
     background-image: 
       linear-gradient(var(--grid-line) 1px, transparent 1px),
       linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-    background-size: 30px 30px;
+    background-size: 40px 40px;
     background-position: center top;
     color:var(--ink);
-    font-family:'IBM Plex Sans', -apple-system, Segoe UI, sans-serif;
+    font-family:'IBM Plex Sans', -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif;
     line-height:1.6;
+    -webkit-font-smoothing: antialiased;
   }
 
-  a{ color:var(--accent); text-decoration: none; transition: all 0.2s ease; }
-  a:hover { text-shadow: 0 0 8px var(--accent-glow); }
-  
+  a{ color:var(--accent); text-decoration: none; transition: color 0.15s ease, border-color 0.15s ease; }
+
   a:focus-visible, button:focus-visible{
     outline:2px solid var(--accent);
     outline-offset:2px;
-    border-radius: 4px;
+    border-radius: 2px;
   }
 
   .mono{ font-family:'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace; }
@@ -53,46 +54,41 @@
   header{
     max-width:1040px;
     margin:0 auto;
-    padding:80px 24px 40px;
+    padding:88px 24px 48px;
   }
-  
-  /* The Internship Badge */
+
   .availability-badge {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(16, 185, 129, 0.1);
-    border: 1px solid rgba(16, 185, 129, 0.2);
-    color: #34D399;
-    padding: 6px 12px;
+    background: rgba(35, 134, 54, 0.1);
+    border: 1px solid rgba(35, 134, 54, 0.4);
+    color: #3FB950;
+    padding: 6px 14px;
     border-radius: 20px;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 12px;
     font-weight: 500;
+    letter-spacing: .02em;
     margin-bottom: 24px;
   }
-  .pulse-dot {
-    width: 8px; height: 8px;
-    background: #10B981;
+  .status-dot-static {
+    width: 6px; height: 6px;
+    background: #3FB950;
     border-radius: 50%;
-    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
-    animation: pulse 2s infinite;
-  }
-  @keyframes pulse {
-    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
-    70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
-    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    flex-shrink: 0;
   }
 
   h1{
-    font-size:clamp(36px, 6vw, 56px);
+    font-size:clamp(36px, 6vw, 52px);
     margin:0 0 16px;
     letter-spacing:-0.02em;
     line-height:1.1;
     color: #FFFFFF;
+    font-weight: 600;
   }
   .lede{
-    max-width:640px;
+    max-width:680px;
     color:var(--muted);
     font-size:18px;
     margin:0 0 32px;
@@ -101,33 +97,30 @@
     display:flex;
     flex-wrap:wrap;
     align-items: center;
-    gap: 16px;
+    gap: 20px;
     font-family:'IBM Plex Mono', monospace;
     font-size:14px;
   }
   .links a:not(.btn-resume) {
     color:var(--muted);
-    border-bottom:1px solid var(--border);
-    padding-bottom:2px;
+    transition: color 0.2s ease;
   }
-  .links a:not(.btn-resume):hover{ color:var(--ink); border-color:var(--accent); }
+  .links a:not(.btn-resume):hover{ color:var(--ink); }
 
-  /* The Resume Button */
   .btn-resume {
-    background: var(--accent);
-    color: #000 !important;
+    background: var(--ink);
+    color: var(--bg) !important;
     font-weight: 600;
-    padding: 10px 20px;
-    border-radius: 4px;
-    box-shadow: 0 4px 14px var(--accent-glow);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding: 8px 20px;
+    border-radius: var(--radius);
+    transition: background 0.15s ease, transform 0.15s ease;
   }
   .btn-resume:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 229, 255, 0.3);
+    background: #FFFFFF;
+    transform: translateY(-1px);
   }
 
-  /* ---------- section label ---------- */
+  /* ---------- section layout ---------- */
   .section-label{
     max-width:1040px;
     margin:0 auto;
@@ -136,12 +129,14 @@
     align-items:center;
     gap:16px;
     margin-bottom:32px;
+    margin-top: 56px;
   }
   .section-label .mono{
-    font-size:13px;
-    letter-spacing:.1em;
-    color:var(--ink);
+    font-size:12px;
+    letter-spacing:.12em;
+    color:var(--accent);
     text-transform:uppercase;
+    font-weight: 500;
   }
   .section-label .rule{
     flex:1;
@@ -149,11 +144,49 @@
     background:var(--border);
   }
 
+  /* ---------- technical arsenal ---------- */
+  .skills-matrix {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 32px;
+  }
+  .skill-category h3 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .skill-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .skill-list li {
+    font-size: 14.5px;
+    color: var(--ink);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .skill-list li::before {
+    content: "■";
+    color: var(--border);
+    font-size: 8px;
+  }
+
   /* ---------- project grid ---------- */
   .grid{
     max-width:1040px;
     margin:0 auto;
-    padding:0 24px 80px;
+    padding:0 24px;
     display:grid;
     grid-template-columns:repeat(2, 1fr);
     gap:24px;
@@ -162,12 +195,7 @@
     .grid{ grid-template-columns:1fr; }
   }
 
-  /* ---------- project card ("sheet") ---------- */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
+  /* ---------- project card ---------- */
   .sheet{
     position:relative;
     background:var(--sheet);
@@ -175,38 +203,15 @@
     border-radius: var(--radius);
     padding:28px 24px 24px;
     transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease;
-    opacity: 0;
-    animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
-  
-  .sheet:nth-child(1) { animation-delay: 0.1s; }
-  .sheet:nth-child(2) { animation-delay: 0.2s; }
-  .sheet:nth-child(3) { animation-delay: 0.3s; }
-  .sheet:nth-child(4) { animation-delay: 0.4s; }
-
   .sheet:hover{
-    transform:translateY(-4px);
-    border-color: rgba(0, 229, 255, 0.3);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px var(--accent-glow);
+    transform:translateY(-2px);
+    border-color: #8B949E;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
   }
   @media (prefers-reduced-motion: reduce){
-    .sheet{ transition:none; animation:none; opacity:1; }
+    .sheet{ transition:none; }
     .sheet:hover{ transform:none; }
-  }
-
-  /* High-Tech Corner Accents */
-  .sheet::before, .sheet::after {
-    content:"";
-    position:absolute;
-    width:12px; height:12px;
-    pointer-events:none;
-    transition: border-color 0.2s ease;
-  }
-  .sheet::before{ top:-1px; left:-1px; border-top:2px solid var(--border); border-left:2px solid var(--border); border-radius: 8px 0 0 0; }
-  .sheet::after{ bottom:-1px; right:-1px; border-bottom:2px solid var(--border); border-right:2px solid var(--border); border-radius: 0 0 8px 0;}
-  
-  .sheet:hover::before, .sheet:hover::after {
-    border-color: var(--accent);
   }
 
   .sheet-head{
@@ -218,55 +223,50 @@
   .sheet-id{
     font-family:'IBM Plex Mono', monospace;
     font-size:12px;
-    color:var(--accent);
+    color:var(--muted);
     letter-spacing:.05em;
-    background: var(--accent-glow);
-    border:1px solid rgba(0, 229, 255, 0.2);
-    padding:4px 8px;
-    border-radius: 4px;
   }
   .status{
     display:inline-flex;
     align-items:center;
-    gap:8px;
+    gap:6px;
     font-family:'IBM Plex Mono', monospace;
     font-size:11px;
-    letter-spacing:.08em;
+    letter-spacing:.06em;
     text-transform:uppercase;
     color:var(--muted);
   }
-  /* Glowing LEDs */
   .status .dot{
-    width:8px; height:8px;
+    width:6px; height:6px;
     border-radius:50%;
     display:inline-block;
   }
-  .dot.ok{ background:var(--ok); box-shadow: 0 0 8px var(--ok); }
-  .dot.wip{ background:var(--wip); box-shadow: 0 0 8px var(--wip); }
+  .dot.ok{ background:var(--ok); }
+  .dot.wip{ background:var(--wip); }
 
   h2{
-    font-size:22px;
+    font-size:20px;
     margin:0 0 10px;
     letter-spacing:-0.01em;
     color: #FFFFFF;
+    font-weight: 500;
   }
   .desc{
     color:var(--muted);
-    font-size:15px;
+    font-size:14.5px;
     margin:0 0 20px;
   }
 
-  /* ---------- media bay ---------- */
   .media-bay{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:12px;
+    gap:10px;
     margin-bottom:20px;
   }
   .media-slot{
     aspect-ratio:4/3;
-    background: #0B111A;
-    border:1px dashed var(--border);
+    background: var(--bg);
+    border:1px solid var(--border);
     border-radius: 4px;
     display:flex;
     align-items:center;
@@ -281,12 +281,11 @@
   .media-slot .placeholder-label{
     font-family:'IBM Plex Mono', monospace;
     font-size:11px;
-    color:#4B5563;
+    color:#4B5566;
     text-align:center;
     padding:8px;
   }
 
-  /* ---------- tags ---------- */
   .tags{
     display:flex;
     flex-wrap:wrap;
@@ -295,20 +294,18 @@
   }
   .tag{
     font-family:'IBM Plex Mono', monospace;
-    font-size:12px;
-    color:var(--muted);
-    background: #1F2937;
-    border:1px solid #374151;
+    font-size:11.5px;
+    color:var(--ink);
+    background: rgba(255, 255, 255, 0.05);
+    border:1px solid transparent;
     padding:4px 10px;
     border-radius: 12px;
-    transition: all 0.2s ease;
+    transition: background 0.2s ease;
   }
   .sheet:hover .tag {
-    border-color: #4B5563;
-    color: var(--ink);
+    background: rgba(255, 255, 255, 0.1);
   }
 
-  /* ---------- footer link row ---------- */
   .sheet-foot{
     display:flex;
     align-items:center;
@@ -319,28 +316,72 @@
     font-size:13px;
   }
   .source-link{
-    color:var(--ink);
+    color:var(--muted);
     display:inline-flex;
     align-items:center;
     gap:6px;
   }
   .source-link:hover{ color:var(--accent); }
-  .source-link .arrow{ transition:transform .2s ease; }
-  .source-link:hover .arrow{ transform:translateX(4px); }
+  .source-link .arrow{ transition:transform .15s ease; }
+  .source-link:hover .arrow{ transform:translateX(3px); }
 
-  @media (prefers-reduced-motion: reduce){
-    html{ scroll-behavior:auto; }
-    .source-link .arrow{ transition:none; }
+  /* ---------- timeline (Moved to bottom) ---------- */
+  .timeline {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .timeline-item {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 40px;
+    border-left: 1px solid var(--border);
+  }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -4.5px;
+    top: 6px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--muted);
+  }
+  .time-date {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 6px;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h3 {
+    margin: 0 0 4px;
+    font-size: 18px;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .timeline-item h4 {
+    margin: 0 0 12px;
+    font-size: 15px;
+    color: var(--muted);
+    font-weight: 400;
+  }
+  .timeline-item p {
+    margin: 0;
+    font-size: 14.5px;
+    color: var(--muted);
+    max-width: 700px;
   }
 
   footer{
-    max-width:1040px;
-    margin:0 auto;
-    padding:20px 24px 80px;
+    text-align: left;
+    max-width: 1040px;
+    margin: 60px auto 0;
+    padding: 30px 24px 60px;
+    border-top: 1px solid var(--border);
     color:var(--muted);
     font-family:'IBM Plex Mono', monospace;
-    font-size:13px;
-    border-top: 1px solid var(--border);
+    font-size:12px;
   }
 </style>
 </head>
@@ -348,7 +389,7 @@
 
 <header>
   <div class="availability-badge">
-    <span class="pulse-dot"></span> Available for Summer 2027 Internships
+    <span class="status-dot-static"></span> Available for Summer 2027 Internships
   </div>
   <h1>Robbie Thomson</h1>
   <p class="lede">
@@ -357,14 +398,49 @@
   </p>
   <div class="links">
     <a href="resume.pdf" class="btn-resume" target="_blank" rel="noopener">View Resume</a>
-    <a href="https://github.com/robbie1172" target="_blank" rel="noopener">github.com/robbie1172</a>
-    <a href="https://www.linkedin.com/in/robert-thomson-20521623a" target="_blank" rel="noopener">linkedin.com/in/robert-thomson</a>
-    <a href="mailto:robbe.thomson@gmail.com">robbe.thomson@gmail.com</a>
+    <a href="https://github.com/robbie1172" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://www.linkedin.com/in/robert-thomson-20521623a" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="mailto:robbe.thomson@gmail.com">Email</a>
   </div>
 </header>
 
 <div class="section-label">
-  <span class="mono">Hardware & Software Projects</span>
+  <span class="mono">Technical Arsenal</span>
+  <span class="rule"></span>
+</div>
+
+<div class="skills-matrix">
+  <div class="skill-category">
+    <h3>Hardware & Embedded</h3>
+    <ul class="skill-list">
+      <li>ESP32 & Arduino</li>
+      <li>Sensor Integration (I2C/SPI)</li>
+      <li>Servo & Motor Control</li>
+      <li>Custom PC Architecture</li>
+    </ul>
+  </div>
+  <div class="skill-category">
+    <h3>Software & AI</h3>
+    <ul class="skill-list">
+      <li>Python & MicroPython</li>
+      <li>C++</li>
+      <li>PyTorch & OpenCV</li>
+      <li>YOLO Vision Models</li>
+    </ul>
+  </div>
+  <div class="skill-category">
+    <h3>CAD & Simulation</h3>
+    <ul class="skill-list">
+      <li>Autodesk Fusion 360</li>
+      <li>LTspice Circuit Sim</li>
+      <li>Rapid Prototyping</li>
+      <li>3D Modeling</li>
+    </ul>
+  </div>
+</div>
+
+<div class="section-label">
+  <span class="mono">Featured Projects</span>
   <span class="rule"></span>
 </div>
 
@@ -410,9 +486,9 @@
       <span class="sheet-id mono">PRJ-02</span>
       <span class="status"><span class="dot ok"></span>Complete</span>
     </div>
-    <h2>Web-Hosted Ultrasonic Radar & Servos</h2>
+    <h2>Web-Hosted Ultrasonic Radar</h2>
     <p class="desc">
-      An interactive radar array built around an ESP32 microcontroller. The system sweeps an HC-SR04 ultrasonic sensor using pan/tilt servo motors to map the physical environment, broadcasting the live geometry data to a custom web interface hosted over the local Wi-Fi network.
+      An interactive radar array built around an ESP32 microcontroller. The system sweeps an HC-SR04 ultrasonic sensor using pan/tilt servo motors to map the physical environment, broadcasting the live geometry data to a custom web interface.
     </p>
     <div class="media-bay">
       <div class="media-slot">
@@ -444,7 +520,7 @@
     </div>
     <h2>Embedded Digital Alarm Clock</h2>
     <p class="desc">
-      A custom-built digital alarm clock programmed directly onto a microcontroller. The hardware features a dedicated screen for displaying multiple time modes, physical buttons for navigating the interface, and custom-programmed audio routines for the alarm sequences.
+      A custom-built digital alarm clock programmed directly onto a microcontroller. The hardware features a dedicated screen for displaying multiple time modes, physical buttons for navigating the interface, and custom-programmed audio routines.
     </p>
     <div class="media-bay">
       <div class="media-slot">
@@ -476,7 +552,7 @@
     </div>
     <h2>High-Performance Compute Workstation</h2>
     <p class="desc">
-      Sourced, assembled, and benchmarked a custom PC designed to handle heavy mechatronics workloads, CAD rendering in Fusion 360, and local AI model inference. Built around an AMD Ryzen 9 5950X, NVIDIA RTX 3090, and 128GB of RAM on an ASUS Pro WS X570-ACE motherboard.
+      Sourced, assembled, and benchmarked a custom PC designed to handle heavy mechatronics workloads, CAD rendering in Fusion 360, and local AI model inference. Built around an AMD Ryzen 9 5950X, NVIDIA RTX 3090, and 128GB of RAM.
     </p>
     <div class="media-bay">
       <div class="media-slot">
@@ -500,6 +576,26 @@
     </div>
   </article>
 
+</div>
+
+<div class="section-label">
+  <span class="mono">Experience & Education</span>
+  <span class="rule"></span>
+</div>
+
+<div class="timeline">
+  <div class="timeline-item">
+    <div class="time-date">July 2026</div>
+    <h3>AI & Robotics Summer Exchange</h3>
+    <h4>Huazhong University of Science and Technology (Wuhan, China)</h4>
+    <p>Completed an intensive two-week robotics program. Disassembled and analyzed industrial robotic arms, developed control routines, and delivered technical lab presentations in an international academic setting.</p>
+  </div>
+  <div class="timeline-item">
+    <div class="time-date">Expected 2028</div>
+    <h3>MEng Electrical and Mechanical Engineering</h3>
+    <h4>University of Edinburgh</h4>
+    <p>Currently in my third year. Coursework focuses on mechatronics, control systems, and embedded programming.</p>
+  </div>
 </div>
 
 <footer>
