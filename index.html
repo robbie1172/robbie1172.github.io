@@ -3,13 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>[Your Name] — Engineering Projects</title>
+<title>Robbie Thomson — Engineering Projects</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
 
   :root{
     --paper:#EDF1F7;
     --paper-line:#CBD6E8;
+    --paper-dot:#B7C6E0;
     --sheet:#FFFFFF;
     --ink:#131A26;
     --muted:#5B677E;
@@ -28,9 +29,11 @@
     margin:0;
     background-color:var(--paper);
     background-image:
+      radial-gradient(var(--paper-dot) 1px, transparent 1px),
       linear-gradient(var(--paper-line) 1px, transparent 1px),
       linear-gradient(90deg, var(--paper-line) 1px, transparent 1px);
-    background-size:28px 28px;
+    background-size:28px 28px, 28px 28px, 28px 28px;
+    background-position:-1px -1px, 0 0, 0 0;
     color:var(--ink);
     font-family:'IBM Plex Sans', -apple-system, Segoe UI, sans-serif;
     line-height:1.5;
@@ -91,6 +94,7 @@
     text-decoration:none;
     border-bottom:1px solid var(--paper-line);
     padding-bottom:2px;
+    transition:border-color .15s ease, color .15s ease;
   }
   .links a:hover{ border-color:var(--accent); color:var(--accent-deep); }
 
@@ -135,6 +139,16 @@
     background:var(--sheet);
     border:1px solid var(--ink);
     padding:22px 22px 20px;
+    box-shadow:4px 4px 0 rgba(19,26,38,0.06);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .sheet:hover{
+    transform:translateY(-3px);
+    box-shadow:6px 8px 0 rgba(19,26,38,0.10);
+  }
+  @media (prefers-reduced-motion: reduce){
+    .sheet{ transition:none; }
+    .sheet:hover{ transform:none; }
   }
   /* technical-drawing corner registration marks — the page's signature detail */
   .sheet::before, .sheet::after,
@@ -161,6 +175,9 @@
     font-size:12px;
     color:var(--muted);
     letter-spacing:.05em;
+    background:var(--paper);
+    border:1px solid var(--paper-line);
+    padding:2px 7px;
   }
   .status{
     display:inline-flex;
@@ -177,6 +194,7 @@
     border-radius:50%;
     display:inline-block;
     flex-shrink:0;
+    box-shadow:0 0 0 3px rgba(0,0,0,0.03);
   }
   /* status colors — reuses the diff/state color language from the
      sensor-fusion project itself: green=operational, amber=in progress,
@@ -283,16 +301,20 @@
 
 <header>
   <div class="eyebrow">Project Log — Rev. 2026.08</div>
-  <h1>[Your Name]</h1>
+  <h1>Robbie Thomson</h1>
   <p class="lede">
-    [One or two sentences about what you're into — e.g. "Mechatronics
-    and embedded systems, focused on sensor fusion and perception.
-    Currently looking for summer 2027 internships."]
+    I'm a third-year Electrical and Mechanical Engineering student at the
+    University of Edinburgh with a hands-on interest in building things —
+    from breadboard prototypes to full workstation-scale rigs. This is a
+    running log of what I've built. Currently looking for a summer 2027
+    internship.
   </p>
   <div class="links">
-    <a href="mailto:you@example.com">you@example.com</a>
-    <a href="https://github.com/yourusername" target="_blank" rel="noopener">github.com/yourusername</a>
-    <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener">linkedin.com/in/yourusername</a>
+    <a href="mailto:robbe.thomson@gmail.com">robbe.thomson@gmail.com</a>
+    <a href="https://github.com/robbie1172" target="_blank" rel="noopener">github.com/robbie1172</a>
+    <a href="https://www.linkedin.com/in/robert-thomson-20521623a?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener">linkedin.com/in/robert-thomson</a>
+    <!-- Upload your resume file into this repo and rename it resume.pdf
+         (or update the href below to match whatever you name it) -->
     <a href="resume.pdf" target="_blank" rel="noopener">resume.pdf</a>
   </div>
 </header>
@@ -344,7 +366,7 @@
       <span class="tag">Kalman Filter</span>
     </div>
     <div class="sheet-foot">
-      <a class="source-link" href="https://github.com/yourusername/sensor-fusion-rig" target="_blank" rel="noopener">
+      <a class="source-link" href="https://github.com/robbie1172/sensor-fusion-rig" target="_blank" rel="noopener">
         View source <span class="arrow">→</span>
       </a>
       <span class="mono" style="color:var(--muted)">2026</span>
@@ -384,13 +406,79 @@
       <span class="tag">[Tag]</span>
     </div>
     <div class="sheet-foot">
-      <a class="source-link" href="[https://github.com/yourusername/repo-name]" target="_blank" rel="noopener">
+      <a class="source-link" href="[https://github.com/robbie1172/repo-name]" target="_blank" rel="noopener">
         View source <span class="arrow">→</span>
       </a>
       <span class="mono" style="color:var(--muted)">[Year]</span>
     </div>
   </article>
   <!-- END TEMPLATE -->
+
+  <!-- Duplicate of the template above — PRJ-03. Fill in the same way. -->
+  <article class="sheet">
+    <div class="corner-bl"></div><div class="corner-br"></div>
+    <div class="sheet-head">
+      <span class="sheet-id mono">PRJ-03</span>
+      <span class="status"><span class="dot planned"></span>[Status label]</span>
+    </div>
+    <h2>[Project Title]</h2>
+    <p class="desc">
+      [2-3 sentence description: what the project does, what problem
+      it solves, and one specific technical detail worth remembering.]
+    </p>
+    <div class="media-bay">
+      <div class="media-slot">
+        <span class="placeholder-label">[IMAGE OR VIDEO 1]</span>
+      </div>
+      <div class="media-slot">
+        <span class="placeholder-label">[IMAGE OR VIDEO 2]</span>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag">[Tag]</span>
+      <span class="tag">[Tag]</span>
+      <span class="tag">[Tag]</span>
+    </div>
+    <div class="sheet-foot">
+      <a class="source-link" href="[https://github.com/robbie1172/repo-name]" target="_blank" rel="noopener">
+        View source <span class="arrow">→</span>
+      </a>
+      <span class="mono" style="color:var(--muted)">[Year]</span>
+    </div>
+  </article>
+
+  <!-- Duplicate of the template above — PRJ-04. Fill in the same way. -->
+  <article class="sheet">
+    <div class="corner-bl"></div><div class="corner-br"></div>
+    <div class="sheet-head">
+      <span class="sheet-id mono">PRJ-04</span>
+      <span class="status"><span class="dot planned"></span>[Status label]</span>
+    </div>
+    <h2>[Project Title]</h2>
+    <p class="desc">
+      [2-3 sentence description: what the project does, what problem
+      it solves, and one specific technical detail worth remembering.]
+    </p>
+    <div class="media-bay">
+      <div class="media-slot">
+        <span class="placeholder-label">[IMAGE OR VIDEO 1]</span>
+      </div>
+      <div class="media-slot">
+        <span class="placeholder-label">[IMAGE OR VIDEO 2]</span>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag">[Tag]</span>
+      <span class="tag">[Tag]</span>
+      <span class="tag">[Tag]</span>
+    </div>
+    <div class="sheet-foot">
+      <a class="source-link" href="[https://github.com/robbie1172/repo-name]" target="_blank" rel="noopener">
+        View source <span class="arrow">→</span>
+      </a>
+      <span class="mono" style="color:var(--muted)">[Year]</span>
+    </div>
+  </article>
 
 </div>
 
