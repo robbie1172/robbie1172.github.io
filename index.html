@@ -340,11 +340,14 @@
     </div>
     <h2>Wireless Radar-Camera Sensor Fusion Rig</h2>
     <p class="desc">
-      ESP32-CAM + mmWave radar edge node streaming to a GPU compute
-      node running YOLOv8 and MiDaS. Fuses AI depth estimation with
-      radar ground truth via live calibration and a Kalman filter;
-      currently being extended onto a 2-axis pan/tilt gimbal for
-      radar-guided tracking.
+      An ESP32-CAM and ultrasonic radar stream live video and distance
+      data to a PC running YOLO and MiDaS for object detection and
+      depth estimation. Since AI depth maps are relative, not physical,
+      the system uses the radar as ground truth — auto-calibrating on
+      the fly to convert visual depth into real centimeters. The video
+      overlay color-codes each tracked object by how well the AI's
+      estimate matches the radar, exposing drift and blind spots in
+      real time.
     </p>
     <div class="media-bay">
       <div class="media-slot">
