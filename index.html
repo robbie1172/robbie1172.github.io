@@ -6,20 +6,21 @@
 <meta name="description" content="Engineering portfolio of Robbie Thomson. Electrical and Mechanical Engineering student at the University of Edinburgh.">
 <title>Robbie Thomson — Engineering Portfolio</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
 
   :root{
-    /* Premium, clean dark theme */
-    --bg: #0D1117;
-    --grid-line: rgba(255, 255, 255, 0.025);
-    --sheet: #161B22;
-    --border: #30363D;
-    --ink: #E6EDF3;
-    --muted: #8B949E;
-    --accent: #58A6FF;
-    --accent-hover: #79C0FF;
-    --ok: #238636;
-    --wip: #D29922;
+    /* Light, blueprint / graph-paper theme */
+    --bg: #EDF1F7;
+    --grid-line: #CBD6E8;
+    --sheet: #FFFFFF;
+    --border: #D7DFEC;
+    --ink: #131A26;
+    --muted: #5B677E;
+    --accent: #2F6FED;
+    --accent-hover: #1D4ED8;
+    --ok: #1FA35A;
+    --wip: #B9790A;
+    --planned: #8891A3;
     --radius: 6px;
   }
 
@@ -29,7 +30,7 @@
   body{
     margin:0;
     background-color:var(--bg);
-    background-image: 
+    background-image:
       linear-gradient(var(--grid-line) 1px, transparent 1px),
       linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
     background-size: 40px 40px;
@@ -61,9 +62,9 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(35, 134, 54, 0.1);
-    border: 1px solid rgba(35, 134, 54, 0.4);
-    color: #3FB950;
+    background: rgba(31, 163, 90, 0.08);
+    border: 1px solid rgba(31, 163, 90, 0.35);
+    color: #177A44;
     padding: 6px 14px;
     border-radius: 20px;
     font-family: 'IBM Plex Mono', monospace;
@@ -74,7 +75,7 @@
   }
   .status-dot-static {
     width: 6px; height: 6px;
-    background: #3FB950;
+    background: var(--ok);
     border-radius: 50%;
     flex-shrink: 0;
   }
@@ -84,7 +85,7 @@
     margin:0 0 16px;
     letter-spacing:-0.02em;
     line-height:1.1;
-    color: #FFFFFF;
+    color: #05070C;
     font-weight: 600;
   }
   .lede{
@@ -109,14 +110,14 @@
 
   .btn-resume {
     background: var(--ink);
-    color: var(--bg) !important;
+    color: #FFFFFF !important;
     font-weight: 600;
     padding: 8px 20px;
     border-radius: var(--radius);
     transition: background 0.15s ease, transform 0.15s ease;
   }
   .btn-resume:hover {
-    background: #FFFFFF;
+    background: var(--accent);
     transform: translateY(-1px);
   }
 
@@ -144,7 +145,7 @@
     background:var(--border);
   }
 
-  /* ---------- technical arsenal ---------- */
+  /* ---------- skills ---------- */
   .skills-matrix {
     max-width: 1040px;
     margin: 0 auto;
@@ -206,8 +207,8 @@
   }
   .sheet:hover{
     transform:translateY(-2px);
-    border-color: #8B949E;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    border-color: #9FB0CC;
+    box-shadow: 0 8px 24px rgba(19,26,38,0.10);
   }
   @media (prefers-reduced-motion: reduce){
     .sheet{ transition:none; }
@@ -243,12 +244,13 @@
   }
   .dot.ok{ background:var(--ok); }
   .dot.wip{ background:var(--wip); }
+  .dot.planned{ background:var(--planned); }
 
   h2{
     font-size:20px;
     margin:0 0 10px;
     letter-spacing:-0.01em;
-    color: #FFFFFF;
+    color: #05070C;
     font-weight: 500;
   }
   .desc{
@@ -265,7 +267,7 @@
   }
   .media-slot{
     aspect-ratio:4/3;
-    background: var(--bg);
+    background: #EEF2F9;
     border:1px solid var(--border);
     border-radius: 4px;
     display:flex;
@@ -281,7 +283,7 @@
   .media-slot .placeholder-label{
     font-family:'IBM Plex Mono', monospace;
     font-size:11px;
-    color:#4B5566;
+    color:var(--muted);
     text-align:center;
     padding:8px;
   }
@@ -296,14 +298,14 @@
     font-family:'IBM Plex Mono', monospace;
     font-size:11.5px;
     color:var(--ink);
-    background: rgba(255, 255, 255, 0.05);
+    background: #EEF2F9;
     border:1px solid transparent;
     padding:4px 10px;
     border-radius: 12px;
     transition: background 0.2s ease;
   }
   .sheet:hover .tag {
-    background: rgba(255, 255, 255, 0.1);
+    background: #E2E8F5;
   }
 
   .sheet-foot{
@@ -325,7 +327,7 @@
   .source-link .arrow{ transition:transform .15s ease; }
   .source-link:hover .arrow{ transform:translateX(3px); }
 
-  /* ---------- timeline (Moved to bottom) ---------- */
+  /* ---------- timeline (bottom) ---------- */
   .timeline {
     max-width: 1040px;
     margin: 0 auto;
@@ -405,7 +407,7 @@
 </header>
 
 <div class="section-label">
-  <span class="mono">Technical Arsenal</span>
+  <span class="mono">Skills</span>
   <span class="rule"></span>
 </div>
 
@@ -550,6 +552,37 @@
       <span class="sheet-id mono">PRJ-04</span>
       <span class="status"><span class="dot ok"></span>Complete</span>
     </div>
+    <h2>Custom Minecraft Controller</h2>
+    <p class="desc">
+      A custom hardware game controller bridging an edge microcontroller and a host PC. C++ firmware handles high-frequency analog polling, while a Python script translates telemetry into direct game inputs. The system implements deadband calibration and exponential moving average (EMA) low-pass filtering to eliminate sensor jitter and cursor drift.
+    </p>
+    <div class="media-bay">
+      <div class="media-slot">
+        <video src="media/prj04-1.mp4" autoplay muted loop playsinline></video>
+      </div>
+      <div class="media-slot">
+        <span class="placeholder-label">[Minecraft Gameplay Clip]</span>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag">C++ & Python</span>
+      <span class="tag">Signal Processing</span>
+      <span class="tag">Hardware Integration</span>
+    </div>
+    <div class="sheet-foot">
+      <a class="source-link" href="https://github.com/robbie1172/minecraft-controller" target="_blank" rel="noopener">
+        View source <span class="arrow">→</span>
+      </a>
+      <span class="mono" style="color:var(--muted)">2026</span>
+    </div>
+  </article>
+
+  <!-- PROJECT 5 -->
+  <article class="sheet">
+    <div class="sheet-head">
+      <span class="sheet-id mono">PRJ-05</span>
+      <span class="status"><span class="dot ok"></span>Complete</span>
+    </div>
     <h2>High-Performance Compute Workstation</h2>
     <p class="desc">
       Sourced, assembled, and benchmarked a custom PC designed to handle heavy mechatronics workloads, CAD rendering in Fusion 360, and local AI model inference. Built around an AMD Ryzen 9 5950X, NVIDIA RTX 3090, and 128GB of RAM.
@@ -573,6 +606,38 @@
         View source <span class="arrow">→</span>
       </a>
       <span class="mono" style="color:var(--muted)">2025</span>
+    </div>
+  </article>
+
+  <!-- PROJECT 6 -->
+  <article class="sheet">
+    <div class="sheet-head">
+      <span class="sheet-id mono">PRJ-06</span>
+      <span class="status"><span class="dot planned"></span>[Status label]</span>
+    </div>
+    <h2>[Project Title]</h2>
+    <p class="desc">
+      [2-3 sentence description: what the project does, what problem
+      it solves, and one specific technical detail worth remembering.]
+    </p>
+    <div class="media-bay">
+      <div class="media-slot">
+        <span class="placeholder-label">[IMAGE OR VIDEO 1]</span>
+      </div>
+      <div class="media-slot">
+        <span class="placeholder-label">[IMAGE OR VIDEO 2]</span>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag">[Tag]</span>
+      <span class="tag">[Tag]</span>
+      <span class="tag">[Tag]</span>
+    </div>
+    <div class="sheet-foot">
+      <a class="source-link" href="[https://github.com/robbie1172/repo-name]" target="_blank" rel="noopener">
+        View source <span class="arrow">→</span>
+      </a>
+      <span class="mono" style="color:var(--muted)">[Year]</span>
     </div>
   </article>
 
