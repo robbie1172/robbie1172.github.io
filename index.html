@@ -514,7 +514,8 @@
     </div>
   </article>
 
-  <!-- PROJECT 3 -->
+  <!-- PROJECT 3 — single photo only, so it spans the full media-bay
+       width instead of sitting next to an empty placeholder slot. -->
   <article class="sheet">
     <div class="sheet-head">
       <span class="sheet-id mono">PRJ-03</span>
@@ -525,11 +526,8 @@
       A custom-built digital alarm clock programmed directly onto a microcontroller. The hardware features a dedicated screen for displaying multiple time modes, physical buttons for navigating the interface, and custom-programmed audio routines.
     </p>
     <div class="media-bay">
-      <div class="media-slot">
+      <div class="media-slot" style="grid-column: 1 / -1; aspect-ratio: 16/9;">
         <img src="media/prj03-1.jpeg" alt="Breadboard prototype of the embedded digital alarm clock, showing the microcontroller, display, and button wiring">
-      </div>
-      <div class="media-slot">
-        <span class="placeholder-label">[Screen Close-up]</span>
       </div>
     </div>
     <div class="tags">
@@ -609,35 +607,41 @@
     </div>
   </article>
 
-  <!-- PROJECT 6 -->
+  <!-- PROJECT 6 — group coursework project. Repo link left as a
+       placeholder since it's unclear whether there's a public repo
+       for a group project like this; fill in or drop the link. -->
   <article class="sheet">
     <div class="sheet-head">
       <span class="sheet-id mono">PRJ-06</span>
-      <span class="status"><span class="dot planned"></span>[Status label]</span>
+      <span class="status"><span class="dot ok"></span>Complete</span>
     </div>
-    <h2>[Project Title]</h2>
+    <h2>Electromagnet-Release Ramp Timer</h2>
     <p class="desc">
-      [2-3 sentence description: what the project does, what problem
-      it solves, and one specific technical detail worth remembering.]
+      Group coursework project: designed, built, and assembled a small
+      car, then used an STM32 board to trigger an electromagnet release
+      at the top of a ramp, precisely timing its descent. Results were
+      benchmarked against a hand-timed equivalent to quantify the
+      accuracy gained from electronic triggering and timing over manual
+      methods.
     </p>
     <div class="media-bay">
       <div class="media-slot">
-        <span class="placeholder-label">[IMAGE OR VIDEO 1]</span>
+        <img src="media/prj06-1.jpg" alt="The car and ramp setup for the electromagnet-release timing rig">
       </div>
       <div class="media-slot">
-        <span class="placeholder-label">[IMAGE OR VIDEO 2]</span>
+        <img src="media/prj06-2.jpg" alt="STM32 board and electromagnet release mechanism close-up">
       </div>
     </div>
     <div class="tags">
-      <span class="tag">[Tag]</span>
-      <span class="tag">[Tag]</span>
-      <span class="tag">[Tag]</span>
+      <span class="tag">STM32</span>
+      <span class="tag">Timing & Measurement</span>
+      <span class="tag">Team Project</span>
     </div>
     <div class="sheet-foot">
       <a class="source-link" href="[https://github.com/robbie1172/repo-name]" target="_blank" rel="noopener">
         View source <span class="arrow">→</span>
       </a>
-      <span class="mono" style="color:var(--muted)">[Year]</span>
+      <span class="mono" style="color:var(--muted)">2025</span>
     </div>
   </article>
 
@@ -653,10 +657,10 @@
     <div class="time-date">July 2026</div>
     <h3>AI & Robotics Summer Exchange</h3>
     <h4>Huazhong University of Science and Technology (Wuhan, China)</h4>
-    <p>Completed an intensive two-week robotics program. Disassembled and analyzed industrial robotic arms, developed control routines, and delivered technical lab presentations in an international academic setting.</p>
+    <p>Completed an intensive two-week robotics program. Worked in groups to disassemble and reassemble industrial robotic arms, then programmed and automated them to pick up blocks with a gripper and place them down in sequence, replicating a small-scale production line. Delivered technical lab presentations in an international academic setting.</p>
   </div>
   <div class="timeline-item">
-    <div class="time-date">Expected 2028</div>
+    <div class="time-date">Expected 2029</div>
     <h3>MEng Electrical and Mechanical Engineering</h3>
     <h4>University of Edinburgh</h4>
     <p>Currently in my third year. Coursework focuses on mechatronics, control systems, and embedded programming.</p>
