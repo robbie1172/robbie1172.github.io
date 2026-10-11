@@ -7,7 +7,7 @@
 <title>Robbie Thomson — Engineering Portfolio</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
-
+ 
   :root{
     /* Light, blueprint / graph-paper theme */
     --bg: #EDF1F7;
@@ -23,10 +23,10 @@
     --planned: #8891A3;
     --radius: 6px;
   }
-
+ 
   *{ box-sizing:border-box; }
   html{ scroll-behavior:smooth; }
-
+ 
   body{
     margin:0;
     background-color:var(--bg);
@@ -40,24 +40,24 @@
     line-height:1.6;
     -webkit-font-smoothing: antialiased;
   }
-
+ 
   a{ color:var(--accent); text-decoration: none; transition: color 0.15s ease, border-color 0.15s ease; }
-
+ 
   a:focus-visible, button:focus-visible{
     outline:2px solid var(--accent);
     outline-offset:2px;
     border-radius: 2px;
   }
-
+ 
   .mono{ font-family:'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace; }
-
+ 
   /* ---------- header ---------- */
   header{
     max-width:1040px;
     margin:0 auto;
     padding:88px 24px 48px;
   }
-
+ 
   .availability-badge {
     display: inline-flex;
     align-items: center;
@@ -79,20 +79,14 @@
     border-radius: 50%;
     flex-shrink: 0;
   }
-
+ 
   h1{
     font-size:clamp(36px, 6vw, 52px);
-    margin:0 0 16px;
+    margin:0 0 24px;
     letter-spacing:-0.02em;
     line-height:1.1;
     color: #05070C;
     font-weight: 600;
-  }
-  .lede{
-    max-width:680px;
-    color:var(--muted);
-    font-size:18px;
-    margin:0 0 32px;
   }
   .links{
     display:flex;
@@ -107,7 +101,7 @@
     transition: color 0.2s ease;
   }
   .links a:not(.btn-resume):hover{ color:var(--ink); }
-
+ 
   .btn-resume {
     background: var(--ink);
     color: #FFFFFF !important;
@@ -120,7 +114,7 @@
     background: var(--accent);
     transform: translateY(-1px);
   }
-
+ 
   /* ---------- section layout ---------- */
   .section-label{
     max-width:1040px;
@@ -144,7 +138,7 @@
     height:1px;
     background:var(--border);
   }
-
+ 
   /* ---------- skills ---------- */
   .skills-matrix {
     max-width: 1040px;
@@ -182,7 +176,7 @@
     color: var(--border);
     font-size: 8px;
   }
-
+ 
   /* ---------- project grid ---------- */
   .grid{
     max-width:1040px;
@@ -195,7 +189,7 @@
   @media (max-width: 760px){
     .grid{ grid-template-columns:1fr; }
   }
-
+ 
   /* ---------- project card ---------- */
   .sheet{
     position:relative;
@@ -214,7 +208,7 @@
     .sheet{ transition:none; }
     .sheet:hover{ transform:none; }
   }
-
+ 
   .sheet-head{
     display:flex;
     align-items:center;
@@ -245,7 +239,7 @@
   .dot.ok{ background:var(--ok); }
   .dot.wip{ background:var(--wip); }
   .dot.planned{ background:var(--planned); }
-
+ 
   h2{
     font-size:20px;
     margin:0 0 10px;
@@ -258,7 +252,7 @@
     font-size:14.5px;
     margin:0 0 20px;
   }
-
+ 
   .media-bay{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -287,12 +281,12 @@
     text-align:center;
     padding:8px;
   }
-
+ 
   .tags{
     display:flex;
     flex-wrap:wrap;
     gap:8px;
-    margin-bottom:24px;
+    margin-bottom:0;
   }
   .tag{
     font-family:'IBM Plex Mono', monospace;
@@ -307,26 +301,19 @@
   .sheet:hover .tag {
     background: #E2E8F5;
   }
-
+ 
+  /* ---------- card footer: year only now, no source link ---------- */
   .sheet-foot{
     display:flex;
     align-items:center;
-    justify-content:space-between;
+    justify-content:flex-end;
     padding-top:16px;
+    margin-top:16px;
     border-top:1px solid var(--border);
     font-family:'IBM Plex Mono', monospace;
     font-size:13px;
   }
-  .source-link{
-    color:var(--muted);
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
-  }
-  .source-link:hover{ color:var(--accent); }
-  .source-link .arrow{ transition:transform .15s ease; }
-  .source-link:hover .arrow{ transform:translateX(3px); }
-
+ 
   /* ---------- timeline (bottom) ---------- */
   .timeline {
     max-width: 1040px;
@@ -374,7 +361,7 @@
     color: var(--muted);
     max-width: 700px;
   }
-
+ 
   footer{
     text-align: left;
     max-width: 1040px;
@@ -388,16 +375,12 @@
 </style>
 </head>
 <body>
-
+ 
 <header>
   <div class="availability-badge">
     <span class="status-dot-static"></span> Available for Summer 2027 Internships
   </div>
   <h1>Robbie Thomson</h1>
-  <p class="lede">
-    I'm a third-year Electrical and Mechanical Engineering student at the
-    University of Edinburgh. I build high-performance compute rigs, integrate local AI models with edge hardware, and write the software that glues it all together.
-  </p>
   <div class="links">
     <a href="resume.pdf" class="btn-resume" target="_blank" rel="noopener">View Resume</a>
     <a href="https://github.com/robbie1172" target="_blank" rel="noopener">GitHub</a>
@@ -405,49 +388,58 @@
     <a href="mailto:robbe.thomson@gmail.com">Email</a>
   </div>
 </header>
-
+ 
 <div class="section-label">
   <span class="mono">Skills</span>
   <span class="rule"></span>
 </div>
-
+ 
 <div class="skills-matrix">
   <div class="skill-category">
-    <h3>Hardware & Embedded</h3>
+    <h3>Programming &amp; Firmware</h3>
     <ul class="skill-list">
-      <li>ESP32 & Arduino</li>
-      <li>Sensor Integration (I2C/SPI)</li>
-      <li>Servo & Motor Control</li>
-      <li>Custom PC Architecture</li>
+      <li>Python</li>
+      <li>MicroPython</li>
     </ul>
   </div>
   <div class="skill-category">
-    <h3>Software & AI</h3>
+    <h3>Embedded Systems</h3>
     <ul class="skill-list">
-      <li>Python & MicroPython</li>
-      <li>C++</li>
-      <li>PyTorch & OpenCV</li>
-      <li>YOLO Vision Models</li>
+      <li>ESP32</li>
+      <li>STM32</li>
+      <li>Sensor integration</li>
     </ul>
   </div>
   <div class="skill-category">
-    <h3>CAD & Simulation</h3>
+    <h3>Software</h3>
     <ul class="skill-list">
-      <li>Autodesk Fusion 360</li>
-      <li>LTspice Circuit Sim</li>
-      <li>Rapid Prototyping</li>
-      <li>3D Modeling</li>
+      <li>Fusion 360</li>
+      <li>LTspice</li>
+      <li>Thonny</li>
+    </ul>
+  </div>
+  <div class="skill-category">
+    <h3>PC Hardware</h3>
+    <ul class="skill-list">
+      <li>Custom computer builds</li>
+      <li>Desktops, gaming rigs &amp; high-end workstations</li>
+    </ul>
+  </div>
+  <div class="skill-category">
+    <h3>AI-Assisted Development</h3>
+    <ul class="skill-list">
+      <li>Coding and prototyping</li>
     </ul>
   </div>
 </div>
-
+ 
 <div class="section-label">
   <span class="mono">Featured Projects</span>
   <span class="rule"></span>
 </div>
-
+ 
 <div class="grid">
-
+ 
   <!-- PROJECT 1 -->
   <article class="sheet">
     <div class="sheet-head">
@@ -475,13 +467,10 @@
       <span class="tag">Sensor Fusion</span>
     </div>
     <div class="sheet-foot">
-      <a class="source-link" href="https://github.com/robbie1172/sensor-fusion-rig" target="_blank" rel="noopener">
-        View source <span class="arrow">→</span>
-      </a>
       <span class="mono" style="color:var(--muted)">2026</span>
     </div>
   </article>
-
+ 
   <!-- PROJECT 2 -->
   <article class="sheet">
     <div class="sheet-head">
@@ -507,13 +496,10 @@
       <span class="tag">WebSockets</span>
     </div>
     <div class="sheet-foot">
-      <a class="source-link" href="https://github.com/robbie1172/ultrasonic-radar-web" target="_blank" rel="noopener">
-        View source <span class="arrow">→</span>
-      </a>
       <span class="mono" style="color:var(--muted)">2026</span>
     </div>
   </article>
-
+ 
   <!-- PROJECT 3 — single photo only, so it spans the full media-bay
        width instead of sitting next to an empty placeholder slot. -->
   <article class="sheet">
@@ -537,13 +523,10 @@
       <span class="tag">Logic</span>
     </div>
     <div class="sheet-foot">
-      <a class="source-link" href="https://github.com/robbie1172/custom-alarm-clock" target="_blank" rel="noopener">
-        View source <span class="arrow">→</span>
-      </a>
       <span class="mono" style="color:var(--muted)">2026</span>
     </div>
   </article>
-
+ 
   <!-- PROJECT 4 -->
   <article class="sheet">
     <div class="sheet-head">
@@ -568,13 +551,10 @@
       <span class="tag">Hardware Integration</span>
     </div>
     <div class="sheet-foot">
-      <a class="source-link" href="https://github.com/robbie1172/minecraft-controller" target="_blank" rel="noopener">
-        View source <span class="arrow">→</span>
-      </a>
       <span class="mono" style="color:var(--muted)">2026</span>
     </div>
   </article>
-
+ 
   <!-- PROJECT 5 -->
   <article class="sheet">
     <div class="sheet-head">
@@ -600,16 +580,11 @@
       <span class="tag">128GB RAM</span>
     </div>
     <div class="sheet-foot">
-      <a class="source-link" href="https://github.com/robbie1172/workstation-build" target="_blank" rel="noopener">
-        View source <span class="arrow">→</span>
-      </a>
       <span class="mono" style="color:var(--muted)">2025</span>
     </div>
   </article>
-
-  <!-- PROJECT 6 — group coursework project. Repo link left as a
-       placeholder since it's unclear whether there's a public repo
-       for a group project like this; fill in or drop the link. -->
+ 
+  <!-- PROJECT 6 -->
   <article class="sheet">
     <div class="sheet-head">
       <span class="sheet-id mono">PRJ-06</span>
@@ -638,20 +613,49 @@
       <span class="tag">Team Project</span>
     </div>
     <div class="sheet-foot">
-      <a class="source-link" href="[https://github.com/robbie1172/repo-name]" target="_blank" rel="noopener">
-        View source <span class="arrow">→</span>
-      </a>
       <span class="mono" style="color:var(--muted)">2025</span>
     </div>
   </article>
-
+ 
+  <!-- PROJECT 7 — new: hand-held mmWave radar tracker. Single photo,
+       so the media-bay spans full width like PRJ-03. -->
+  <article class="sheet">
+    <div class="sheet-head">
+      <span class="sheet-id mono">PRJ-07</span>
+      <span class="status"><span class="dot ok"></span>Complete</span>
+    </div>
+    <h2>Hand-Held mmWave Radar Tracker</h2>
+    <p class="desc">
+      A standalone, hand-held tracking device built around an ESP32, an
+      LD2450 mmWave radar sensor, and a 2.8-inch ILI9341 TFT display.
+      Parses the radar's UART data stream and plots a live radar map
+      directly on the screen, tracking a target's position and speed
+      in real time with no PC required.
+    </p>
+    <div class="media-bay">
+      <div class="media-slot" style="grid-column: 1 / -1; aspect-ratio: 16/9;">
+        <span class="placeholder-label">[Hand-Held Radar Photo]</span>
+        <!-- Replace with: <img src="media/prj07-1.jpg" alt="..."> -->
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag">ESP32</span>
+      <span class="tag">LD2450</span>
+      <span class="tag">MicroPython</span>
+      <span class="tag">UART/SPI</span>
+    </div>
+    <div class="sheet-foot">
+      <span class="mono" style="color:var(--muted)">2026</span>
+    </div>
+  </article>
+ 
 </div>
-
+ 
 <div class="section-label">
   <span class="mono">Experience & Education</span>
   <span class="rule"></span>
 </div>
-
+ 
 <div class="timeline">
   <div class="timeline-item">
     <div class="time-date">July 2026</div>
@@ -666,10 +670,11 @@
     <p>Currently in my third year. Coursework focuses on mechatronics, control systems, and embedded programming.</p>
   </div>
 </div>
-
+ 
 <footer>
   Designed and built by Robbie Thomson. Hosted on GitHub Pages.
 </footer>
-
+ 
 </body>
 </html>
+ 
