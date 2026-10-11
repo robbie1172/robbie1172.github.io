@@ -7,7 +7,7 @@
 <title>Robbie Thomson — Engineering Portfolio</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
- 
+
   :root{
     /* Light, blueprint / graph-paper theme */
     --bg: #EDF1F7;
@@ -23,10 +23,10 @@
     --planned: #8891A3;
     --radius: 6px;
   }
- 
+
   *{ box-sizing:border-box; }
   html{ scroll-behavior:smooth; }
- 
+
   body{
     margin:0;
     background-color:var(--bg);
@@ -40,24 +40,24 @@
     line-height:1.6;
     -webkit-font-smoothing: antialiased;
   }
- 
+
   a{ color:var(--accent); text-decoration: none; transition: color 0.15s ease, border-color 0.15s ease; }
- 
+
   a:focus-visible, button:focus-visible{
     outline:2px solid var(--accent);
     outline-offset:2px;
     border-radius: 2px;
   }
- 
+
   .mono{ font-family:'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace; }
- 
+
   /* ---------- header ---------- */
   header{
     max-width:1040px;
     margin:0 auto;
     padding:88px 24px 48px;
   }
- 
+
   .availability-badge {
     display: inline-flex;
     align-items: center;
@@ -79,7 +79,7 @@
     border-radius: 50%;
     flex-shrink: 0;
   }
- 
+
   h1{
     font-size:clamp(36px, 6vw, 52px);
     margin:0 0 24px;
@@ -101,7 +101,7 @@
     transition: color 0.2s ease;
   }
   .links a:not(.btn-resume):hover{ color:var(--ink); }
- 
+
   .btn-resume {
     background: var(--ink);
     color: #FFFFFF !important;
@@ -114,7 +114,7 @@
     background: var(--accent);
     transform: translateY(-1px);
   }
- 
+
   /* ---------- section layout ---------- */
   .section-label{
     max-width:1040px;
@@ -138,7 +138,7 @@
     height:1px;
     background:var(--border);
   }
- 
+
   /* ---------- skills ---------- */
   .skills-matrix {
     max-width: 1040px;
@@ -176,7 +176,7 @@
     color: var(--border);
     font-size: 8px;
   }
- 
+
   /* ---------- project grid ---------- */
   .grid{
     max-width:1040px;
@@ -189,7 +189,7 @@
   @media (max-width: 760px){
     .grid{ grid-template-columns:1fr; }
   }
- 
+
   /* ---------- project card ---------- */
   .sheet{
     position:relative;
@@ -208,7 +208,7 @@
     .sheet{ transition:none; }
     .sheet:hover{ transform:none; }
   }
- 
+
   .sheet-head{
     display:flex;
     align-items:center;
@@ -239,7 +239,7 @@
   .dot.ok{ background:var(--ok); }
   .dot.wip{ background:var(--wip); }
   .dot.planned{ background:var(--planned); }
- 
+
   h2{
     font-size:20px;
     margin:0 0 10px;
@@ -252,7 +252,7 @@
     font-size:14.5px;
     margin:0 0 20px;
   }
- 
+
   .media-bay{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -281,7 +281,7 @@
     text-align:center;
     padding:8px;
   }
- 
+
   .tags{
     display:flex;
     flex-wrap:wrap;
@@ -301,7 +301,7 @@
   .sheet:hover .tag {
     background: #E2E8F5;
   }
- 
+
   /* ---------- card footer: year only now, no source link ---------- */
   .sheet-foot{
     display:flex;
@@ -313,7 +313,7 @@
     font-family:'IBM Plex Mono', monospace;
     font-size:13px;
   }
- 
+
   /* ---------- timeline (bottom) ---------- */
   .timeline {
     max-width: 1040px;
@@ -361,7 +361,7 @@
     color: var(--muted);
     max-width: 700px;
   }
- 
+
   footer{
     text-align: left;
     max-width: 1040px;
@@ -375,7 +375,7 @@
 </style>
 </head>
 <body>
- 
+
 <header>
   <div class="availability-badge">
     <span class="status-dot-static"></span> Available for Summer 2027 Internships
@@ -388,12 +388,12 @@
     <a href="mailto:robbe.thomson@gmail.com">Email</a>
   </div>
 </header>
- 
+
 <div class="section-label">
   <span class="mono">Skills</span>
   <span class="rule"></span>
 </div>
- 
+
 <div class="skills-matrix">
   <div class="skill-category">
     <h3>Programming &amp; Firmware</h3>
@@ -432,14 +432,14 @@
     </ul>
   </div>
 </div>
- 
+
 <div class="section-label">
   <span class="mono">Featured Projects</span>
   <span class="rule"></span>
 </div>
- 
+
 <div class="grid">
- 
+
   <!-- PROJECT 1 -->
   <article class="sheet">
     <div class="sheet-head">
@@ -454,10 +454,10 @@
     </p>
     <div class="media-bay">
       <div class="media-slot">
-        <video src="media/prj01-1.jpg" autoplay muted loop playsinline></video>
+        <img src="media/prj01-1.jpg" alt="ESP32-CAM and ultrasonic radar hardware setup for the sensor fusion system">
       </div>
       <div class="media-slot">
-        <video src="media/prj01-2.jpg" autoplay muted loop playsinline></video>
+        <img src="media/prj01-2.jpg" alt="Live tracking output showing YOLO detection with radar-calibrated distance overlay">
       </div>
     </div>
     <div class="tags">
@@ -470,7 +470,7 @@
       <span class="mono" style="color:var(--muted)">2026</span>
     </div>
   </article>
- 
+
   <!-- PROJECT 2 -->
   <article class="sheet">
     <div class="sheet-head">
@@ -486,7 +486,7 @@
         <video src="media/prj02-1.mp4" autoplay muted loop playsinline></video>
       </div>
       <div class="media-slot">
-        <span class="media/prj02-2.jpg">[Web Interface Demo]</span>
+        <span class="placeholder-label">[Web Interface Demo]</span>
       </div>
     </div>
     <div class="tags">
@@ -499,7 +499,7 @@
       <span class="mono" style="color:var(--muted)">2026</span>
     </div>
   </article>
- 
+
   <!-- PROJECT 3 — single photo only, so it spans the full media-bay
        width instead of sitting next to an empty placeholder slot. -->
   <article class="sheet">
@@ -526,7 +526,7 @@
       <span class="mono" style="color:var(--muted)">2026</span>
     </div>
   </article>
- 
+
   <!-- PROJECT 4 -->
   <article class="sheet">
     <div class="sheet-head">
@@ -538,11 +538,8 @@
       A custom hardware game controller bridging an edge microcontroller and a host PC. C++ firmware handles high-frequency analog polling, while a Python script translates telemetry into direct game inputs. The system implements deadband calibration and exponential moving average (EMA) low-pass filtering to eliminate sensor jitter and cursor drift.
     </p>
     <div class="media-bay">
-      <div class="media-slot">
+      <div class="media-slot" style="grid-column: 1 / -1; aspect-ratio: 16/9;">
         <video src="media/prj04-1.mp4" autoplay muted loop playsinline></video>
-      </div>
-      <div class="media-slot">
-        <span class="placeholder-label">[Minecraft Gameplay Clip]</span>
       </div>
     </div>
     <div class="tags">
@@ -554,7 +551,7 @@
       <span class="mono" style="color:var(--muted)">2026</span>
     </div>
   </article>
- 
+
   <!-- PROJECT 5 -->
   <article class="sheet">
     <div class="sheet-head">
@@ -567,10 +564,10 @@
     </p>
     <div class="media-bay">
       <div class="media-slot">
-        <span class="placeholder-label">[Internal Build Photo]</span>
+        <img src="media/prj05-1.jpg" alt="Desk setup with the custom-built workstation running under the monitor">
       </div>
       <div class="media-slot">
-        <span class="placeholder-label">[Desk Setup Photo]</span>
+        <img src="media/prj05-2.jpg" alt="Internal build photo of the workstation case, showing component layout and cable routing">
       </div>
     </div>
     <div class="tags">
@@ -583,7 +580,7 @@
       <span class="mono" style="color:var(--muted)">2025</span>
     </div>
   </article>
- 
+
   <!-- PROJECT 6 -->
   <article class="sheet">
     <div class="sheet-head">
@@ -604,7 +601,7 @@
         <img src="media/prj06-1.jpg" alt="The car and ramp setup for the electromagnet-release timing rig">
       </div>
       <div class="media-slot">
-        <img src="media/prj06-2.jpg" alt="STM32 board and electromagnet release mechanism close-up">
+        <img src="media/prj06-2.png" alt="STM32 board and electromagnet release mechanism close-up">
       </div>
     </div>
     <div class="tags">
@@ -616,7 +613,7 @@
       <span class="mono" style="color:var(--muted)">2025</span>
     </div>
   </article>
- 
+
   <!-- PROJECT 7 — new: hand-held mmWave radar tracker. Single photo,
        so the media-bay spans full width like PRJ-03. -->
   <article class="sheet">
@@ -634,8 +631,7 @@
     </p>
     <div class="media-bay">
       <div class="media-slot" style="grid-column: 1 / -1; aspect-ratio: 16/9;">
-        <span class="placeholder-label">[Hand-Held Radar Photo]</span>
-        <!-- Replace with: <img src="media/prj07-1.jpg" alt="..."> -->
+        <img src="media/prj07-1.jpg" alt="Hand-held mmWave radar tracker, showing the ESP32, LD2450 sensor, and ILI9341 display displaying a live radar map">
       </div>
     </div>
     <div class="tags">
@@ -648,14 +644,14 @@
       <span class="mono" style="color:var(--muted)">2026</span>
     </div>
   </article>
- 
+
 </div>
- 
+
 <div class="section-label">
   <span class="mono">Experience & Education</span>
   <span class="rule"></span>
 </div>
- 
+
 <div class="timeline">
   <div class="timeline-item">
     <div class="time-date">July 2026</div>
@@ -664,17 +660,16 @@
     <p>Completed an intensive two-week robotics program. Worked in groups to disassemble and reassemble industrial robotic arms, then programmed and automated them to pick up blocks with a gripper and place them down in sequence, replicating a small-scale production line. Delivered technical lab presentations in an international academic setting.</p>
   </div>
   <div class="timeline-item">
-    <div class="time-date">Expected 2029</div>
-    <h3>MEng Electrical and Mechanical Engineering</h3>
+    <div class="time-date">Expected 2028</div>
+    <h3>BEng Electrical and Mechanical Engineering</h3>
     <h4>University of Edinburgh</h4>
     <p>Currently in my third year. Coursework focuses on mechatronics, control systems, and embedded programming.</p>
   </div>
 </div>
- 
+
 <footer>
   Designed and built by Robbie Thomson. Hosted on GitHub Pages.
 </footer>
- 
+
 </body>
 </html>
- 
